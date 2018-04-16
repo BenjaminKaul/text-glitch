@@ -4,7 +4,26 @@ html, body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
 
-.glitch {
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.code {
+  background: #212121;
+  color: #FAFAFA;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.margin {
   margin-top: 144px;
+}
+
+.margin-half {
+  margin-top: 72px;
+}
+
+.text-center {
   text-align: center;
 }

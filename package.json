@@ -2,9 +2,13 @@
   "name": "text-glitch",
   "version": "1.0.0",
   "description": "\u001b[Canimating from text to text using a randomizing character effect",
-  "main": "dist/glitch.min.js",
+  "main": "dist/js/glitch.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BenjaminKaul/text-glitch"
   },
   "author": "Benjamin Kaul",
   "license": "MIT"
