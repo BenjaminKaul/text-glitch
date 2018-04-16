@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Glitch.js</title>
+    <link rel="stylesheet" href="src/css/glitch.css">
+  </head>
+  <body>
+    <h1 id="glitch1" class="glitch">Demo text to change</h1>
+    <script type="text/javascript" src="dist/js/glitch.min.js"></script>
+    <script type="text/javascript">
+      var glitchEx = new Glitch(document.querySelector('#glitch1'), {
+        backToFront: true,
+        textArray: ['Internet of cats', 'DOM', 'Another javascript plugin', 'css'],
+        offset: 2000,
+        interval: {
+          randomizing: 2000,
+          adding: 2000,
+          removing: 2000,
+          inserting: 2000
+        }
+      });
+      glitchEx.animateInterval();
+    </script>
+  </body>
+</html>
