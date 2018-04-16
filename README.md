@@ -19,10 +19,12 @@ glitch.animateInterval();
 
 ### Options
 
-backToFront: the randomizing character animation starts at the end of the text (Boolean)\
-textArray: the array of texts to animate between (Array)\
-charArray: the array of characters used for the animation (Array)\
-interval.randomizing: the time it takes to randomize the characters (Number in ms)\
-interval.adding: the time it takes to add characters at the end of the text (Number in ms)\
-interval.removing: the time it takes to remove characters at the end of the text (Number in ms)\
-interval.inserting: the time it takes to set the new text (Number in ms)\
+| Option | Value | Effect |
+| ------ | ----- | ------ |
+| backToFront | Boolean | the randomizing character animation starts at the end of the text |
+| textArray | Array | the array of texts to animate between |
+| charArray | Array | the array of characters used for the animation |
+| interval.randomizing | Number (ms) | the time it takes to randomize the characters |
+| interval.adding | Number (ms) | the time it takes to add characters at the end of the text |
+| interval.removing | Number (ms) | the time it takes to remove characters at the end of the text |
+| interval.inserting | Number (ms) | the time it takes to set the new text |
