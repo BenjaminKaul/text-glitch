@@ -1,21 +1,21 @@
 
-'use strict';
+"use strict";
 
 var Glitch = (function(){
 
   /* Constructor */
   function Glitch( element, params ){
     if( element === null || element === undefined ) {
-      throw new Error( 'Element must not be null or undefined' );
+      throw new Error( "Element must not be null or undefined" );
     }
     /* Duck typing test for DOM element */
-    if( typeof element !== 'object' || element.nodeType !== 1 || typeof  element.nodeName !== 'string' ) {
-      throw new Error( 'Element must be a DOM element' );
+    if( typeof element !== "object" || element.nodeType !== 1 || typeof  element.nodeName !== "string" ) {
+      throw new Error( "Element must be a DOM element" );
     }
 
     var _options = {
-      charArray: '+*/|}{[]~:;?/.=+-_)(*^%$#@!)}',
-      textArray: [ 'firstGlitchText', 'secondGlitchText', 'thirdGlitchText', 'fourthGlitchText' ],
+      charArray: "+*/|}{[]~:;?/.=+-_)(*^%$#@!)}",
+      textArray: [ "firstGlitchText", "secondGlitchText", "thirdGlitchText", "fourthGlitchText" ],
       backToFront: false,
       offset: 0,
       interval: {
@@ -26,9 +26,11 @@ var Glitch = (function(){
       }
     };
 
-    if( params ) _options.deepExtend( params );
+    if( params ) {
+      _options.deepExtend( params );
+    }
 
-    function setText( newText ) { this.element.innerHTML = newText; this.element.setAttribute('data-text', newText); }
+    function setText( newText ) { this.element.innerHTML = newText; this.element.setAttribute("data-text", newText); }
     function getText() { return this.element.innerHTML; }
 
     function getElement() { return element; }
@@ -60,14 +62,14 @@ var Glitch = (function(){
   }
 
   /* Make the deepExtend function not enumerable or overwritable */
-  Object.defineProperty( Object.prototype, 'deepExtend',
+  Object.defineProperty( Object.prototype, "deepExtend",
   { enumerable: false, writable: false, configurable: false });
 
   /**
    * Check for missing context
    */
   function checkCtx() {
-    if( this === null || this === undefined ) throw new Error('Missing context');
+    if( this === null || this === undefined ) throw new Error("Missing context");
   }
 
   /**
@@ -150,7 +152,7 @@ var Glitch = (function(){
   }
 
   /**
-   * Changes character after character of the given element's text
+   * Changes character after character of the given element"s text
    */
   function randomizeText( callback ) {
     checkCtx.call(this);
@@ -182,7 +184,7 @@ var Glitch = (function(){
     checkCtx.call( this );
     var text = nextText.call( this );
     var len = text.length;
-    if( len !== this._text.length ) throw new Error('Length of old and new text must be the same');
+    if( len !== this._text.length ) throw new Error("Length of old and new text must be the same");
     var interval = this._options.interval.inserting;
     for( var charIdx = 0; charIdx < len; charIdx++ ) {
       setTimeout(
@@ -219,8 +221,8 @@ var Glitch = (function(){
   };
 
   Object.defineProperties( Glitch.prototype, {
-    'animateToNext': { writable: false, enumerable: true, configurable: false },
-    'animateInterval': { writable: false, enumerable: true, configurable: false }
+    "animateToNext": { writable: false, enumerable: true, configurable: false },
+    "animateInterval": { writable: false, enumerable: true, configurable: false }
   } )
 
   return Glitch;

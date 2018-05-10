@@ -21,20 +21,14 @@
       glitchEx.animateInterval();</code></pre>
     </p>
     <h1 id="glitch1" class="margin-half">Demo text to change</h1>
-    <script type="text/javascript" src="dist/js/glitch.min.js"></script>
+    <script type="text/javascript" src="src/js/glitch_ec6.js"></script>
     <script type="text/javascript">
-      var glitchEx = new Glitch(document.querySelector('#glitch1'), {
+      var glitch = new Glitch(document.querySelector('#glitch1'), {
         backToFront: true,
-        textArray: ['Internet of cats', 'DOM', 'Another javascript plugin', 'css'],
-        offset: 2000,
-        interval: {
-          randomizing: 2000,
-          adding: 2000,
-          removing: 2000,
-          inserting: 2000
-        }
+        textArray: ['Internet of cats', 'DOM', 'css'],
+        offset: 1000
       });
-      glitchEx.animateInterval();
+      glitch.animateInterval();
     </script>
   </body>
 </html>
