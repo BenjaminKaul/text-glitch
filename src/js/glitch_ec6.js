@@ -78,7 +78,7 @@ class Glitch {
    * Remove a character at the end of the elements text
    */
   _removeChar() {
-    var elText = this.text;
+    let elText = this.text;
     this.text = elText.substr( 0, elText.length - 1 );
   }
 
@@ -86,18 +86,18 @@ class Glitch {
    * Adds or removes the given amount of characters
    */
   _changeTextLength( callback ) {
-    var diff = this._nextText().length - this.text.length;
+    let diff = this._nextText().length - this.text.length;
     if( diff > 0 ) {
-      var interval = this._options.interval.adding
-      for( var charsToAdd = diff; charsToAdd > 0; charsToAdd-- ) {
+      let interval = this._options.interval.adding
+      for( let charsToAdd = diff; charsToAdd > 0; charsToAdd-- ) {
         setTimeout( this._appendChar.bind(this),
         ( interval / diff ) * charsToAdd );
         if( charsToAdd == 1 ) setTimeout( callback, interval ); // when last one, fire callback
       }
     } else if( diff < 0 ) {
       diff = Math.abs( diff );
-      var interval = this._options.interval.removing;
-      for( var charsToRemove = diff; charsToRemove > 0; charsToRemove-- ) {
+      let interval = this._options.interval.removing;
+      for( let charsToRemove = diff; charsToRemove > 0; charsToRemove-- ) {
         setTimeout( this._removeChar.bind(this),
         ( interval / diff ) * charsToRemove );
         if( charsToRemove == 1 ) setTimeout( callback, interval);  // when last one, fire callback
@@ -121,8 +121,8 @@ class Glitch {
    * Changes the character at the given index to a random character
    */
   _changeCharacter( idx, char, callback ) {
-    var text = this.text;
-    var newText = text.substr( 0, idx )
+    let text = this.text;
+    let newText = text.substr( 0, idx )
     + char
     + text.substr( idx + 1, text.length - idx - 1 );
     this.text = newText;
@@ -133,10 +133,10 @@ class Glitch {
    * Changes character after character of the given element"s text
    */
   _randomizeText( callback ) {
-    var max = this.text.length;
-    var interval = this._options.interval.randomizing;
+    let max = this.text.length;
+    let interval = this._options.interval.randomizing;
     if( this._options.backToFront ) {
-      for( var charIdx = max - 1, timerIdx = 0;
+      for( let charIdx = max - 1, timerIdx = 0;
         charIdx >= 0; charIdx--, timerIdx++ ) {
         setTimeout(this._changeCharacter.bind( this, charIdx,
           this._getRandomCharacter() ),
@@ -145,7 +145,7 @@ class Glitch {
         if( charIdx == 0 ) setTimeout( callback, interval );
       }
     } else {
-      for( var charIdx = 0; charIdx < max; charIdx++ ) {
+      for( let charIdx = 0; charIdx < max; charIdx++ ) {
         setTimeout(this._changeCharacter.bind( this, charIdx,
           this._getRandomCharacter() ),
           ( interval / max ) * charIdx
@@ -159,10 +159,10 @@ class Glitch {
    * Sets the new text character after character
    */
   _setNextText( callback ) {
-    var text = this._nextText();
-    var len = text.length;
+    let text = this._nextText();
+    let len = text.length;
     if( len !== this.text.length ) throw new Error("Length of old and new text must be the same");
-    var interval = this._options.interval.inserting;
+    let interval = this._options.interval.inserting;
     for( var charIdx = 0; charIdx < len; charIdx++ ) {
       setTimeout(
         this._changeCharacter.bind( this, charIdx, text.charAt( charIdx ) ),
@@ -203,7 +203,7 @@ class Glitch {
  */
 Object.prototype.deepExtend = function( source ){
   if( ! source ) return this;
-  for( var property in source ) {
+  for( let property in source ) {
     if( source[property] && source[property].constructor &&
       source[property].constructor === Object ) {
       if( this[property] === null || this[property] === undefined ) this[property] = {};
